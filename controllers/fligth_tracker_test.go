@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -123,7 +123,8 @@ func TestController_GetPath(t *testing.T) {
 		c.GetPath(recorder, request)
 
 		resp := recorder.Result()
-		body, err := ioutil.ReadAll(resp.Body)
+		defer resp.Body.Close()
+		body, err := io.ReadAll(resp.Body)
 		require.NoError(t, err, "should return a readable response body")
 
 		responseBody := models.PathResponse{}
@@ -157,6 +158,7 @@ func TestController_GetPath(t *testing.T) {
 		c.GetPath(recorder, request)
 
 		resp := recorder.Result()
+		defer resp.Body.Close()
 
 		assert.Equal(t, http.StatusBadRequest, resp.StatusCode)
 	})
@@ -182,6 +184,7 @@ func TestController_GetPath(t *testing.T) {
 		c.GetPath(recorder, request)
 
 		resp := recorder.Result()
+		defer resp.Body.Close()
 
 		assert.Equal(t, http.StatusBadRequest, resp.StatusCode)
 	})
@@ -209,6 +212,7 @@ func TestController_GetPath(t *testing.T) {
 		c.GetPath(recorder, request)
 
 		resp := recorder.Result()
+		defer resp.Body.Close()
 
 		assert.Equal(t, http.StatusNotFound, resp.StatusCode)
 	})

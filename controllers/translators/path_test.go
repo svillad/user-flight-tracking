@@ -3,10 +3,11 @@ package translators_test
 import (
 	"testing"
 
+	"gotest.tools/assert"
+
 	"github.com/volume/service/user-flight-tracking/controllers/translators"
 	"github.com/volume/service/user-flight-tracking/dto"
 	"github.com/volume/service/user-flight-tracking/models"
-	"gotest.tools/assert"
 )
 
 func TestTranslator_PathDTOtoModel(t *testing.T) {
