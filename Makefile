@@ -4,7 +4,7 @@ PROJECT?=user-flight-tracking
 
 default: build
 
-build: test build-local
+build: build-local
 
 build-local:
 	go build -o ./app ./server
