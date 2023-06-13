@@ -19,7 +19,7 @@ lint: get-linter
 	golangci-lint run --timeout=5m
 
 get-linter:
-	command -v golangci-lint || go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+	command -v golangci-lint || go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
 test: generate
 	go fmt ./...
@@ -35,7 +35,7 @@ generate: remove-vendor get-generator
 	# go mod vendor
 
 get-generator:
-	go install github.com/golang/mock/mockgen
+	go install github.com/golang/mock/mockgen@latest
 
 regenerate: clean-mock generate
 
