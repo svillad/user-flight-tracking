@@ -21,7 +21,7 @@ func Routes() http.Handler {
 	router := mux.NewRouter()
 
 	// routes
-	router.HandleFunc("/calculate", flightTrackerController.GetPath).Methods(http.MethodGet)
+	router.HandleFunc("/calculate", flightTrackerController.GetPath).Methods(http.MethodPost)
 
 	return cors.AllowAll().Handler(router)
 }

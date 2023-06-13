@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "volume",
+    "dateExported": "2023-06-13T06:18:19.041Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f9de9ff8-5237-4b75-97ad-349bf5d7ce78",
+            "colId": "df450e0e-a187-43b1-924c-6aadc4216c6b",
+            "containerId": "",
+            "name": "calculate",
+            "url": "http://localhost:8080/calculate",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-06-13T06:17:16.404Z",
+            "modified": "2023-06-13T06:17:16.404Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"flights\": [\n\t\t[\"IND\", \"EWR\"],\n\t\t[\"SFO\", \"ATL\"],\n\t\t[\"GSO\", \"IND\"],\n\t\t[\"ATL\", \"GSO\"]\n\t]\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
