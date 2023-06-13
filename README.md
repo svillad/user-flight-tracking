@@ -120,6 +120,37 @@ make generate
 
 For more information on available Makefile commands, refer to the Makefile in the project root.
 
+## Docker
+
+### Building the Docker Image
+
+To build the Docker image for the microservice, run the following command:
+```
+docker build -t user-flight-tracking:1.0 .
+```
+
+This command will build the Docker image with the tag user-flight-tracking:1.0 using the Dockerfile in the current directory.
+
+### Running the Docker Container
+
+To run the microservice as a Docker container, use the following command:
+```
+docker run -p 8080:8080 user-flight-tracking:1.0
+```
+
+This command will start a Docker container based on the user-flight-tracking:1.0 image and map port 8080 of the container to port 8080 of the host machine. You can access the microservice at http://localhost:8080.
+
+### Running the Docker Container in Interactive Mode
+
+If you need to access the Docker container in interactive mode for debugging or running commands inside the container, you can use the following command:
+```
+docker run -p 8080:8080 -it user-flight-tracking:1.0 /bin/bash
+```
+
+This command will start the Docker container in interactive mode with a Bash shell. You can then execute commands or perform any necessary debugging tasks within the container.
+
+Please note that these commands assume you have Docker installed and properly configured on your system.
+
 ## Contributing
 
 Contributions are welcome!.
