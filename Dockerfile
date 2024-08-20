@@ -1,7 +1,7 @@
-FROM golang:1.20-bullseye as builder
+FROM golang:1.23.0-bookworm as builder
 
-RUN go install golang.org/dl/go1.20@latest \
-    && go1.20 download
+RUN go install golang.org/dl/go1.23@latest \
+    && go1.23 download
 
 # Instalar mockgen
 RUN go install github.com/golang/mock/mockgen@latest
